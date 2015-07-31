@@ -16,12 +16,9 @@ import falcon
 import json
 import logging
 from urllib.parse import parse_qs
-import traceback
-import re
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
 from falcon.routing import compile_uri_template
-import six
 
 class SpecServer():
 
