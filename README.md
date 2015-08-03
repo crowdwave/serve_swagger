@@ -55,6 +55,27 @@ operation_handlers = {
 }
 ```
 
+If you want to get fancy, you can push each request through multiple request handlers, like so:
+```
+operation_handlers = {
+    'addPet': [authenticate_handler, refresh_cookie, add_some_header, addPet],
+..
+..
+..
+etc as above
+```
+
+You can also push requests through authorization handlers. This is done by creating a tuple of request handlers that return True if the authorization succeeds. Note that only ONE authorization handler needs to return True for the authorization to succeed.
+```
+operation_handlers = {
+    'addPet': [authenticate_handler, (requires_admin, requires_manager,), addPet],
+..
+..
+..
+etc as above
+```
+
+
 finally, set up Falcon and the Swagger spec server, load in your Swagger JSON API spec document, like so:
 
 ```
@@ -77,4 +98,4 @@ curl 127.0.0.1:8001/3.0/pet/1
 curl -X DELETE 127.0.0.1:8001/3.0/pet/1
 ```
 
-
+Please note that this code is substantially extracted from the Mailman 3 authenticating proxy server which is found at https://gitlab.com/astuart/mailmania
