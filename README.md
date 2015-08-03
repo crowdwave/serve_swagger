@@ -2,6 +2,8 @@ License: GPL
 # serve_swagger
 Use Swagger API JSON to create Falcon REST APIs.
 
+A complete working REST API server in 57 lines of code.
+
 This is intended just as a proof of concept/technology demo.  It is based on Swagger PetStore REST API.
 
 A presentation was done on this topic at PyCon Brisbane 2015 - here is the presentation notes: https://github.com/crowdwave/serve_swagger/blob/master/PyConPresentation.pdf
