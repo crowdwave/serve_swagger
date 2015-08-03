@@ -4,6 +4,8 @@ Use Swagger API JSON to create Falcon REST APIs.
 
 This is intended just as a proof of concept/technology demo.  It is based on Swagger PetStore REST API.
 
+A presentation was done on this topic at PyCon Brisbane 2015 - here is the presentation notes: https://github.com/crowdwave/serve_swagger/blob/master/PyConPresentation.pdf
+
 You can browse the Swagger PetStore API at http://petstore.swagger.io/
 
 This shows how you can use a Swagger JSON API document to create a REST API server in Python using Falcon.
