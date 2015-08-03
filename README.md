@@ -16,9 +16,11 @@ Each Swagger route must have a unique operation id.
 
 In your Python code, import Falcon and serve_swagger as follows:
 
+```
 import falcon
 import falcon.status_codes as status
 from serve_swagger import SpecServer
+```
 
 create Python functions that you want to execute in response to incoming requests.
 Make sure your function takes **request_handler_args as its argument.
