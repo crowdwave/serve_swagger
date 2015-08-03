@@ -65,20 +65,12 @@ If you want to get fancy, you can push each request through multiple request han
 ```
 operation_handlers = {
     'addPet': [authenticate_handler, refresh_cookie, add_some_header, addPet],
-..
-..
-..
-etc as above
 ```
 
 You can also push requests through authorization handlers. This is done by creating a tuple of request handlers that return True if the authorization succeeds. Note that only ONE authorization handler needs to return True for the authorization to succeed.
 ```
 operation_handlers = {
     'addPet': [authenticate_handler, (requires_admin, requires_manager,), addPet],
-..
-..
-..
-etc as above
 ```
 
 
