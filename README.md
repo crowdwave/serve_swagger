@@ -10,7 +10,7 @@ You can browse the Swagger PetStore API at http://petstore.swagger.io/
 
 This shows how you can use a Swagger JSON API document to create a REST API server in Python using Falcon.
 
-It's easy!  Have a look at the petstore example to see how its done.
+It's easy!  Have a look at the petstore.py example to see how its done.
 
 Each Swagger route must have a unique operation id.
 
