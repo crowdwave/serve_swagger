@@ -1,5 +1,8 @@
+License: GPL
 # serve_swagger
 Use Swagger API JSON to create Falcon REST APIs.
+
+This is intended just as a proof of concept/technology demo.
 
 This shows how you can use a Swagger JSON API document to create a REST API server in Python using Falcon.
 
@@ -63,11 +66,15 @@ api.add_sink(server, r'/')
 ```
 
 Run it as follows:
+```
 gunicorn -b 127.0.0.1:8001 petstore:application
+```
 
 to test:
+```
 curl 127.0.0.1:8001/3.0/pet/findByStatus
 curl 127.0.0.1:8001/3.0/pet/1
 curl -X DELETE 127.0.0.1:8001/3.0/pet/1
+```
 
 
