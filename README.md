@@ -18,16 +18,16 @@ Make sure your function takes **request_handler_args as its argument.
 
 Like so:
 
-'''
+```
 def deletePet(**request_handler_args):
         resp = request_handler_args['resp']
         resp.status = falcon.HTTP_204
         resp.body = 'Your pet is deleted! Very sad......'
-'''
+```
 
 create an operation_handlers dict that maps each swagger operation id to one of your functions.
 
-'''
+```
 operation_handlers = {
     'addPet':                       [not_found],
     'updatePet':                    [not_found],
@@ -50,17 +50,17 @@ operation_handlers = {
     'updateUser':                   [not_found],
     'deleteUser':                   [not_found],
 }
-'''
+```
 
 finally, set up Falcon and the Swagger spec server, load in your Swagger JSON API spec document, like so:
 
-'''
+```
 api = application = falcon.API()
 server = SpecServer(operation_handlers=operation_handlers)
 with open('petstore.json') as f:
     server.load_spec_swagger(f.read())
 api.add_sink(server, r'/')
-'''
+```
 
 Run it as follows:
 gunicorn -b 127.0.0.1:8001 petstore:application
