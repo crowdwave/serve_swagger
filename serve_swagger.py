@@ -78,7 +78,7 @@ class SpecServer():
         try:
             for k in swagger_spec['paths'].keys():
                 for http_method in swagger_spec['paths'][k].keys():
-                    uri_fields, uri_template = compile_uri_template('/' + http_method.lower() + '/3.0' + k)
+                    uri_fields, uri_template = compile_uri_template('/' + http_method.lower() + swagger_spec['basePath'] + k)
                     self.routing_templates.append(repr(uri_template))
                     operationId = swagger_spec['paths'][k][http_method]['operationId']
                     self.routing_table[operationId] = {'uri_fields': uri_fields, 'uri_template': uri_template}
